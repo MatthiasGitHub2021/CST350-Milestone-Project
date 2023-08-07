@@ -1,0 +1,16 @@
+﻿@model CST350_Milestone1.Models.UserModel
+<style>
+    h1 {
+        color: red;
+        background-color: yellow;
+    }
+</style>
+<div>
+    <h4>Login Failed</h4>
+    <hr />
+    <p>@Model.UserName, you are not authorized. <h1>Self Destruct sequence initiated on your device.</h1></p>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
