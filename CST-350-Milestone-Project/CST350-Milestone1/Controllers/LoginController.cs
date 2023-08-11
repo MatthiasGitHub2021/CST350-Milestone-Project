@@ -17,7 +17,8 @@ namespace CST350_Milestone1.Controllers
             SecurityService securityService = new SecurityService();
 
             if (securityService.IsValid(user))
-                return View("LoginSuccess", user);
+                //redirects to game controller
+                return RedirectToAction("Index", "Game", user);
             else
                 return View("LoginFailure", user);
 

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CST350_Milestone1.Models.CellModel>
+
+<style>
+    .game-button {
+        width: 30px;
+        border: none;
+    }
+
+    .game-button-image {
+        width: 25px;
+    }
+
+    .button-zone {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .line-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .button-label {
+        font-size: 8px;
+        text-align: center;
+    }
+</style>
+
+<form>
+    <div class="button-zone">
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            //start a new line every five elements
+            @if (i % 20 == 0)
+            {
+                <div class="line-break"></div>
+            }
+
+            <button class="game-button" type="submit"  name="buttonNumber" asp-controller="Button" asp-action="HandleButtonClick">
+                <img class="game-button-image" src="~/images/graybutton.png" />
+            </button>
+        }
+    </div>
+</form>
